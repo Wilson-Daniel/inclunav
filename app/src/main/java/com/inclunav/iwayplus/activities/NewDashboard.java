@@ -96,13 +96,14 @@ public class NewDashboard  {
                 }
             }else{
                 Log.d("rooooomdbb", "doInBackground: fetching data");
-                String apiUrl = "https://maps.iwayplus.in/building/all";
+                String apiUrl = "https://dev.iwayplus.in/secured/building/all";
 
                 try {
                     URL url = new URL(apiUrl);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("POST");
-                    conn.setRequestProperty("Content-Type", "application/json"); // Set content type if needed
+                    conn.setRequestProperty("Content-Type", "application/json");
+                    conn.setRequestProperty("x-access-token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA3Y2E3MDY4MGQ4YmUyYTQwMGQxMDgiLCJyb2xlcyI6WyJ1c2VyIl0sImlhdCI6MTcxMTc4NjYwOCwiZXhwIjoxNzExNzg3NDQ4fQ.LnO5iRIub2CGeETWhYd8X1Q8o-FeYUwv_sJ_gJueFQE");// Set content type if needed
 
                     int responseCode = conn.getResponseCode();
 
